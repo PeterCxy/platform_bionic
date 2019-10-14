@@ -783,10 +783,10 @@ static int MutexLockWithTimeout(pthread_mutex_internal_t* mutex, bool use_realti
 
 }  // namespace NonPI
 
-static inline __always_inline bool IsMutexDestroyed(uint16_t mutex_state) {
-    if (android_get_application_target_sdk_version() >= __ANDROID_API_P__) {
-        return mutex_state == 0xffff;
-    }
+static inline __always_inline bool IsMutexDestroyed(uint16_t) {
+    //if (android_get_application_target_sdk_version() >= __ANDROID_API_P__) {
+    //    return mutex_state == 0xffff;
+    //}
     return false;
 }
 
